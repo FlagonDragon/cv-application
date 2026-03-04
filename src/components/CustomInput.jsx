@@ -8,7 +8,7 @@ function CustomInput({placeholder}) {
   return (
     <>
         {open == true ? (
-        <>
+        <div className="inputDiv">
             <input
             type="text"
             placeholder={placeholder}
@@ -17,14 +17,14 @@ function CustomInput({placeholder}) {
             <button onClick={() => {{setOpen(!open)}}}>
                 {'Submit'}
             </button>
-        </>
+        </div>
         ) : (
-        <>
+        <div className="inputDiv">
             <div>{value}</div>
             <button onClick={() => {{setOpen(!open)}}}>
                 {'Edit'}
             </button>
-        </>
+        </div>
         )}
     </>
   );
