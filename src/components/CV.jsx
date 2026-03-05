@@ -4,7 +4,14 @@ import CustomInput from './CustomInput.jsx'
 
 function CV() {
 
-    
+    // return(
+    //     <form className='CVDiv' onSubmit={e => e.preventDefault()}>
+    //         <div className='section'>
+    //             <h2>TEST TEST TEST</h2> 
+    //             <CustomInput placeholder={'Testing!'}></CustomInput>
+    //         </div>
+    //     </form>
+    // )
 
     return(
     <div className='CVDiv'>

@@ -9,18 +9,21 @@ function CustomInput({placeholder}) {
     <>
         {open == true ? (
         <div className="inputDiv">
-            <input
-            type="text"
-            placeholder={placeholder}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}/>
-            <button onClick={() => {{setOpen(!open)}}}>
+            <label>
+                {placeholder}: {' '}
+                <input
+                type="text"
+                placeholder={placeholder}
+                value={value}
+                onChange={(e) => setValue(e.target.value)}/>
+            </label>
+            <button type="submit" onClick={() => {{setOpen(!open)}}}>
                 {'Submit'}
             </button>
         </div>
         ) : (
-        <div className="inputDiv">
-            <div>{value}</div>
+        <div className="inputDiv submittedDiv">
+            <div>{placeholder}: {value}</div>
             <button onClick={() => {{setOpen(!open)}}}>
                 {'Edit'}
             </button>
