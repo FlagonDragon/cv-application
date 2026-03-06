@@ -28,6 +28,11 @@
     width: 600px;
 }
 
+h2 {
+    align-self: center;
+    margin-left: 100px;
+}
+
 h3 {
     text-align: center;
 }

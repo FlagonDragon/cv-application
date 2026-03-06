@@ -1,8 +1,9 @@
 import { useState } from "react";
 import '../styles/CV.css'
-import CustomInput from './CustomInput.jsx'
 import Education from "./Education.jsx";
 import Practical from "./Practical.jsx";
+import General from "./General.jsx";
+
 
 function CV() {
   const [edArr, setEdArr] = useState([0]);
@@ -32,30 +33,42 @@ function CV() {
     <div className='CVDiv'>
         <form className='section' onSubmit={e => e.preventDefault()}>
             <h2>
-                General Information <button 
+                General Information 
+                {' '}
+                <button 
                     type='submit'
                     onClick={() => {{setGen(!gen)}}}
-                >Submit</button>
+                    >{gen ? 'Submit' : 'Edit'}
+                </button>
             </h2> 
-            <CustomInput placeholder={'Name'} open={gen}></CustomInput>
-            <CustomInput placeholder={'Email'} open={gen}></CustomInput>
-            <CustomInput placeholder={'Phone Number'} open={gen}></CustomInput>
+            <General open={gen}></General>
         </form>
-        <div className='section'>
-            <h2>Educational Experience <button className='addBtn' onClick={addEd}>Add</button> <button 
+        <form className='section' onSubmit={e => e.preventDefault()}>
+            <h2>Educational Experience 
+            {' '}
+            <button onClick={addEd}>Add</button>
+            {' '}
+            <button 
                     type='submit'
                     onClick={() => {{setEd(!ed)}}}
-                >Submit</button></h2>
+                    >{ed ? 'Submit' : 'Edit'}
+            </button>
+            </h2>
             <Education arr={edArr} open={ed}></Education>
-        </div>
-        <div className='section'>
-            <h2>Practical Experience <button className='addBtn' 
-            onClick={addPr}>Add</button> <button 
+        </form>
+        <form className='section' onSubmit={e => e.preventDefault()}>
+            <h2>Practical Experience
+            {' '}
+            <button onClick={addPr}>Add</button> 
+            {' '}
+            <button 
                     type='submit'
                     onClick={() => {{setPr(!pr)}}}
-                >Submit</button></h2> 
+                    >{pr ? 'Submit' : 'Edit'}
+            </button>
+                </h2> 
             <Practical arr={prArr} open={pr}></Practical>
-        </div>
+        </form>
     </div>
     )
 
