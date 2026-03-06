@@ -1,8 +1,13 @@
-// import { useState } from "react";
+import { useState } from "react";
 import '../styles/CV.css'
 import CustomInput from './CustomInput.jsx'
+import Education from "./Education.jsx";
+import Practical from "./Practical.jsx";
 
 function CV() {
+  const [EdArr, setEdArr] = useState([0]);
+  const [PrArr, setPrArr] = useState([0]);
+
 
     // return(
     //     <form className='CVDiv' onSubmit={e => e.preventDefault()}>
@@ -13,6 +18,20 @@ function CV() {
     //     </form>
     // )
 
+    function addEd() {
+        let newArr = [...EdArr]
+        newArr.push(newArr.length)
+        console.log(newArr);
+        setEdArr(newArr);
+    }
+
+    function addPr() {
+        let newArr = [...PrArr]
+        newArr.push(newArr.length)
+        console.log(newArr);
+        setPrArr(newArr);
+    }
+
     return(
     <div className='CVDiv'>
         <div className='section'>
@@ -22,17 +41,12 @@ function CV() {
             <CustomInput placeholder={'Phone Number'}></CustomInput>
         </div>
         <div className='section'>
-            <h2>Educational Experience</h2> 
-            <CustomInput placeholder={'School Name'}></CustomInput>
-            <CustomInput placeholder={'Title of Study'}></CustomInput>
-            <CustomInput placeholder={'Date of Study'}></CustomInput>
+            <h2>Educational Experience <button className='addBtn' onClick={addEd}>Add</button></h2> 
+            <Education arr={EdArr}></Education>
         </div>
         <div className='section'>
-            <h2>Practical Experience</h2> 
-            <CustomInput placeholder={'Company Name'}></CustomInput>
-            <CustomInput placeholder={'Position Title'}></CustomInput>
-            <CustomInput placeholder={'Responsibilities'}></CustomInput>
-            <CustomInput placeholder={'Start/End Dates'}></CustomInput>
+            <h2>Practical Experience <button className='addBtn' onClick={addPr}>Add</button></h2> 
+            <Practical arr={PrArr}></Practical>
         </div>
     </div>
     )
