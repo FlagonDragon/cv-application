@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import CustomInput from './CustomInput.jsx'
 
-function Education({arr}) {
+function Education({arr, open}) {
 
     return (
     <>
@@ -9,10 +9,10 @@ function Education({arr}) {
         <div key={item}>
             {/* <br></br> */}
             <h3>{item+1}</h3>
-            <CustomInput placeholder={'Company Name'}></CustomInput>
-            <CustomInput placeholder={'Position Title'}></CustomInput>
-            <CustomInput placeholder={'Responsibilities'}></CustomInput>
-            <CustomInput placeholder={'Start/End Dates'}></CustomInput>
+            <CustomInput placeholder={'Company Name'} open={open}></CustomInput>
+            <CustomInput placeholder={'Position Title'} open={open}></CustomInput>
+            <CustomInput placeholder={'Responsibilities'} open={open}></CustomInput>
+            <CustomInput placeholder={'Start/End Dates'} open={open}></CustomInput>
         </div>  
         ))}
 

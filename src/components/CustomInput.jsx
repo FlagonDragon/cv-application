@@ -1,9 +1,8 @@
 import { useState } from "react";
 import '../styles/CustomInput.css'
 
-function CustomInput({placeholder}) {
+function CustomInput({placeholder, open}) {
   const [value, setValue] = useState("");
-  const [open, setOpen] = useState(true);
 
   return (
     <>
@@ -17,16 +16,10 @@ function CustomInput({placeholder}) {
                 value={value}
                 onChange={(e) => setValue(e.target.value)}/>
             </label>
-            <button type="submit" onClick={() => {{setOpen(!open)}}}>
-                {'Submit'}
-            </button>
         </div>
         ) : (
         <div className="inputDiv submittedDiv">
             <div>{placeholder}: {value}</div>
-            <button onClick={() => {{setOpen(!open)}}}>
-                {'Edit'}
-            </button>
         </div>
         )}
     </>
