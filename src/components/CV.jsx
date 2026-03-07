@@ -12,8 +12,18 @@ function CV() {
   const [ed, setEd] = useState(true);
   const [pr, setPr] = useState(true);
 
+    function delEd(item) {
+        let newArr = [...edArr]
+        newArr.splice(newArr.indexOf(item), 1)
+        setEdArr(newArr);
+    }
 
-
+  
+    function delPr(item) {
+        let newArr = [...prArr]
+        newArr.splice(newArr.indexOf(item), 1)
+        setPrArr(newArr);
+    }
 
     function addEd() {
         let newArr = [...edArr]
@@ -31,7 +41,7 @@ function CV() {
 
     return(
     <div className='CVDiv'>
-        <form className='section' onSubmit={e => e.preventDefault()}>
+        <form className='section general' onSubmit={e => e.preventDefault()}>
             <h2>
                 General Information 
                 {' '}
@@ -54,7 +64,7 @@ function CV() {
                     >{ed ? 'Submit' : 'Edit'}
             </button>
             </h2>
-            <Education arr={edArr} open={ed}></Education>
+            <Education arr={edArr} open={ed} delFunc={delEd}></Education>
         </form>
         <form className='section' onSubmit={e => e.preventDefault()}>
             <h2>Practical Experience
@@ -67,7 +77,7 @@ function CV() {
                     >{pr ? 'Submit' : 'Edit'}
             </button>
                 </h2> 
-            <Practical arr={prArr} open={pr}></Practical>
+            <Practical arr={prArr} open={pr} delFunc={delPr}></Practical>
         </form>
     </div>
     )

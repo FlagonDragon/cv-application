@@ -29,8 +29,22 @@
 }
 
 h2 {
-    align-self: center;
-    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: end;
+    /* border: 5px solid green; */
+}
+
+/* .general h2 {
+    justify-content: center;
+} */
+
+.general button {
+    margin-left: 70px;
 }
 
 h3 {
